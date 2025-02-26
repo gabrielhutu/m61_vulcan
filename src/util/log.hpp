@@ -30,7 +30,7 @@ namespace m61
 
         static std::string_view getLogLevelString(const LogLevel level);
 
-        static std::string_view getCurrentDateTime();
+        static std::string getCurrentDateTime();
     };
 
 }

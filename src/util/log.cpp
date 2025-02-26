@@ -25,7 +25,7 @@ std::string_view m61::Logger::getLogLevelString(const LogLevel level)
         return "UNKNOWN";
     }
 }
-std::string_view m61::Logger::getCurrentDateTime()
+std::string m61::Logger::getCurrentDateTime()
 {
     using namespace std::chrono;
     auto now = system_clock::now();
@@ -36,6 +36,6 @@ std::string_view m61::Logger::getCurrentDateTime()
     std::ostringstream oss;
     oss << std::put_time(&tm_now, "%Y-%m-%d %H:%M:%S")
         << "." << std::setfill('0') << std::setw(3) << ms.count();
-    return (std::string_view)oss.str();
+    return oss.str();
 }
 
